@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Technical Documentaion Page</title>
+<link rel="stylesheet" type="text/css" href="techpage.css">
+<meta charset="utf-8">
+</head>
+<body>
+
+<nav id="navbar">
+
+    <header>HTML Documentation</header>
+    <ul>
+    <li><a class="nav-link" href="#What_is_HTML?">What is HTML?</a></li>
+
+    <li><a class="nav-link" href="#Anatomy_of_an_HTML_element">Anatomy of an HTML element</a></li>
+
+    <li><a class="nav-link" href="#Nesting_elements">Nesting elements</a></li>
+
+    <li><a class="nav-link" href="#Empty_elements">Empty elements</a></li>
+
+    <li><a class="nav-link" href="#Anatomy_of_an_HTML_document">Anatomy of an HTML document</a></li>
+
+    <li><a class="nav-link" href="#Images">Images</a></li>
+
+    <li><a class="nav-link" href="#Headings">Headings</a></li>
+
+    <li><a class="nav-link" href="#Paragraphs">Paragraphs</a></li>
+
+    <li><a class="nav-link" href="#Lists">Lists</a></li>
+
+    <li><a class="nav-link" href="#Links">Links</a></li>
+
+    <li><a class="nav-link" href="#Conclusion">Conclusion</a></li>
+
+    <li><a class="nav-link" href="#Reference">Reference</a></li>
+
+   
+
+    
+
+    </ul>
+
+</nav>
+
+<main id="main-doc">
+ 
+ <section class="main-section" id="What_is_HTML?">
+     <header>What is HTML?</header>
+
+     <article>
+         <p>
+        HTML (Hypertext Markup Language) is not a programming language; it is a markup
+         language used to tell your browser how to structure the web pages you visit. 
+         It can be as complicated or as simple as the web developer wishes it to be.
+          HTML consists of a series of elements, which you use to enclose, wrap, or mark 
+          up different parts of the content to make it appear or act a certain way. 
+          The enclosing tags can make a bit of content into a hyperlink to link to another page on the web,
+           italicize words, and so on.  For example, take the following line of content:
+        </p>
+           <code>My cat is very grumpy.
+</code>
+      
+      If we wanted the line to stand by itself, 
+      we could specify that it is a paragraph by enclosing it in a paragraph element:
+        <code>&lt;<span class="code-entity">p</span>&gt;My cat is very grumpy.&lt;<span class="code-entity">/p</span>&gt;
+</code>
+      
+     </article>
+
+ </section>
+
+ <section class="main-section" id="Anatomy_of_an_HTML_element">
+     <header>Anatomy of an HTML element</header>
+
+     <article>
+       <p> The main parts of our element are as follows:</p>
+     </article>
+     <p>
+    <ol>
+        <li>
+            <b>The opening tag:</b> This consists of the name of the element (in this case, p), wrapped in opening and 
+            closing angle brackets. This states where the element begins or starts to take effect — 
+            in this case where the paragraph begins.
+        </li>
+        <li>
+            <b>The closing tag:</b> This is the same as the opening tag, except that it includes a forward slash before the element name. This states where the element ends — in this case where the paragraph ends. 
+            Failing to add a closing tag is one of the standard beginner errors and can lead to strange results.
+        </li>
+        <li>
+            <b>The content:</b> This is the content of the element, which in this case, is just text.
+        </li>
+        <li>
+            <b>The element:</b> The opening tag, the closing tag and the content together comprise the element.
+        </li>
+    </ol>
+</p>
+
+    Elements can also have attributes that look like the following:
+    <code>&lt;<span class="code-entity">p</span> <span class="attributes">class=</span>"<span class="entities">editor-note</span>"<span class="code-entity"></span>&gt;My cat is very grumpy.&lt;<span class="code-entity">/p</span>&gt;
+</code>
+  <p>Attributes contain extra information about the element that you don't want to appear in the actual 
+      content. Here, class is the attribute name and editor-note is the attribute value. 
+      The class attribute allows you to give the element an identifier that can be used later to target 
+      the element with style information and other things.</p>
+
+      An attribute should always have the following:
+      <p>
+          <ol>
+              <li>
+                A space between it and the element name (or the previous attribute, if the element already 
+                has one or more attributes).
+              </li>
+              <li>
+                The attribute name followed by an equal sign.
+              </li>
+              <li>
+                The attribute value wrapped by opening and closing quotation marks.
+              </li>
+          </ol>
+      </p>
+  </section>
+
+  <section class="main-section" id="Nesting_elements">
+    <header>Nesting elements</header>
+    <article>
+        <p>
+            You can put elements inside other elements too — this is called nesting. If we wanted to state
+             that our cat is very grumpy, we could wrap the word "very" in a <span class="entities">&lt;strong&gt;</span> element, which 
+            means that the word is to be strongly emphasized:
+        </p>
+        <code>&lt;<span class="code-entity">p</span>&gt;My cat is &lt;<span class="code-entity">strong</span>&gt;very&lt;<span class="code-entity">/strong</span>&gt; grumpy.&lt;<span class="code-entity">/p</span>&gt;	
+</code>
+        You do however need to make sure that your elements are properly nested. In the example above,
+         we opened the <span class="entities">&lt;p&gt;</span> element first, then the
+          <span class="entities">&lt;strong&gt;</span> 
+         element; therefore, we have to close the <span class="entities">&lt;strong&gt;</span> element first,
+          then the <span class="entities">&lt;p&gt;</span> element. The following is incorrect:
+      
+    
+    <code>&lt;<span class="code-entity">p</span>&gt;My cat is &lt;<span class="code-entity">strong</span>&gt;very grumpy.&lt;<span class="code-entity">/p</span>&gt;&lt;<span class="code-entity">/strong</span>&gt;	
+</code>
+    <p>The elements have to open and close correctly so that they are clearly inside or outside one another.
+     If they overlap as shown above, then your web browser will try to make the best guess at what you were 
+     trying to say, which can lead to unexpected results. So don't do it!The elements have to open and close
+      correctly so that they are clearly inside or outside one another. If they overlap as shown above, 
+      then your web browser will try to make the best guess at what you were trying to say, which can lead
+       to unexpected results. So don't do it!</p>
+    </article>
+    </section>
+
+
+
+
+    <section class="main-section" id="Empty_elements">
+        <header>Empty elements</header>
+   
+        <article>
+            <p>
+                Some elements have no content and are called empty elements.
+                 Take the <span class="entities">&lt;img&gt;</span> element that we already have in our HTML page:
+           </p>
+             
+         
+         If we wanted the line to stand by itself, 
+         we could specify that it is a paragraph by enclosing it in a paragraph element:
+           <code>&lt;<span class="code-entity">img</span> <span class="attributes">src</span>="<span class="entities">images/firefox-icon.png</span>" <span class="attributes">src</span>="<span class="entities">My test image</span>"&gt;
+</code>
+         <p>
+            This contains two attributes, but there is no closing &lt;img&gt; tag and no inner content. 
+            This is because an image element doesn't wrap content to affect it.
+             Its purpose is to embed an image in the HTML page in the place it appears.
+         </p>
+        </article>
+   
+    </section>
+
+    <section class="main-section" id="Anatomy_of_an_HTML_document">
+        <header>Anatomy of an HTML document</header>
+   
+        <article>
+            <p>
+                That wraps up the basics of individual HTML elements, but they aren't handy on their own.
+                 Now we'll look at how individual elements are combined to form an entire HTML page.
+                  Let's revisit the code we put into our index.html example (which we first met in the 
+                  Dealing with files article):
+           </p>
+              <code>&lt;!DOCTYPE html&gt;<br>&lt;<span class="code-entity">html</span>&gt;
+    &lt;<span class="code-entity">head</span>&gt;
+       &lt;<span class="code-entity">meta</span> <span class="attributes">charset</span>="<span class="entities">utf-8</span>"&gt;       
+       &lt;<span class="code-entity">title</span>&gt;My technical documentaion page&lt;/<span class="code-entity">title</span>&gt;
+    &lt;<span class="code-entity">/head</span>&gt;
+    &lt;<span class="code-entity">body</span>&gt;
+      &lt;<span class="code-entity">img</span> <span class="attributes">src</span>="<span class="entities">images/firefox-icon.png</span>" <span class="attributes">src</span>="<span class="entities">My test image</span>"&gt;
+    &lt;<span class="code-entity">/body</span>&gt; 
+    &lt;<span class="code-entity">/html</span>&gt;</code>
+         
+    <p>Here, we have the following:</p>
+    <ul>
+        <li>&lt;!DOCTYPE html&gt; - the doctype. It is required preamble. 
+            In the mists of time, when HTML was young (around 1991/92), doctypes were meant
+             to act as links to a set of rules that the HTML page had to follow to be considered 
+             good HTML, which could mean automatic error checking and other useful things.
+              However these days, they don't do much, and are basically just needed to make sure
+               your document behaves correctly. That's all you need to know for now.	
+        </li>
+        <li>&lt;html&gt;&lt;/html&gt; - This element wraps all the content on the entire page and
+             is sometimes known as the root element.	
+        </li>
+        <li>&lt;head&gt;&lt;/head&gt; - This element acts as a container for all the stuff you want to 
+            include on the HTML page that isn't the content you are showing to your page's viewers. 
+            This includes things like keywords and a page description that you want to appear in search 
+            results, CSS to style our content, character set declarations and more.	
+        </li>
+        <li>&lt;meta charset="utf-8"&gt; - This element sets the character set your document should use 
+            to UTF-8 which includes most characters from the vast majority of written languages. 
+            Essentially, it can now handle any textual content you might put on it. There is no reason
+             not to set this and it can help avoid some problems later on.	
+        </li>
+        <li>&lt;title&gt;&lt;/title&gt; - This sets the title of your page, which is the title that 
+            appears in the browser tab the page is loaded in. It is also used to describe the page when
+             you bookmark/favourite it.	
+        </li>
+        <li>&lt;body&gt;&lt;/body&gt; - This contains all the content that you want to show to web users 
+            when they visit your page, whether that's text, images, videos, games, playable audio tracks 
+            or whatever else.	
+        </li>
+    </ul>
+  
+        </article>
+   
+    </section>
+    <section class="main-section" id="Images">
+        <header>Images</header>
+   
+        <article>
+            <p>
+                Let's turn our attention to the <span class="entities">&lt;img&gt;</span> element again:
+           </p>
+              <code>&lt;<span class="code-entity">img</span> <span class="attributes">src</span>="<span class="entities">images/firefox-icon.png</span>" <span class="attributes">src</span>="<span class="entities">My test image</span>"&gt;
+         </code>
+         
+         <p>As we said before, it embeds an image into our page in the position it appears. It does this 
+             via the src (source) attribute, which contains the path to our image file.</p>
+        <p>We have also included an alt (alternative) attribute. In this attribute, you specify descriptive
+            text for users who cannot see the image, possibly because of the following reasons:</p>
+          <ol>
+              <li>
+                They are visually impaired. Users with significant visual impairments often use tools 
+                called screen readers to read out the alt text to them.
+              </li>
+              <li>
+                Something has gone wrong causing the image not to display. For example, try
+                deliberately changing the path inside your src attribute to make it incorrect. If you save
+                and reload the page, you should see something like this in place of the image:
+              </li>
+          </ol>
+          <img id="test" src="https://mdn.mozillademos.org/files/9349/alt-text-example.png" alt="My test image" class="center">     
+            
+          <p>
+            The keywords for alt text are "descriptive text". The alt text you write should provide the 
+            reader with enough information to have a good idea of what the image conveys. In this example,
+             our current text of "My test image" is no good at all. A much better alternative for our
+             Firefox logo would be "The Firefox logo: a flaming fox surrounding the Earth."
+          </p>
+          <p>
+            Try coming up with some better alt text for your image now.
+          </p>
+           
+        </article>
+   
+    </section>
+
+    <section class="main-section" id="Headings">
+        <header>Headings
+        </header>
+   
+        <article>
+        <p>
+             Heading elements allow you to specify that certain parts of your content are headings — 
+                or subheadings. In the same way that a book has the main title, chapter titles and 
+                subtitles, an HTML document can too. HTML contains 6 heading levels, <span class="entities">&lt;h1&gt;</span>-<span class="entities">&lt;h6&gt;</span>, 
+                    although you'll commonly only use 3 to 4 at most:
+           </p>
+              <code>&lt;<span class="code-entity">h1</span>&gt;My main title&lt;<span class="code-entity">/h1</span>&gt;
+&lt;<span class="code-entity">h2</span>&gt;My top level heading&lt;<span class="code-entity">/h2</span>&gt;
+&lt;<span class="code-entity">h3</span>&gt;My subheading&lt;<span class="code-entity">/h3</span>&gt;
+&lt;<span class="code-entity">h4</span>&gt;My sub-subheading&lt;<span class="code-entity">/h4</span>&gt;
+</code>
+         
+<p>Now try adding a suitable title to your HTML page just above your <span class="entities">&lt;img&gt;</span> element.</p>
+         
+        </article>
+    
+    </section>
+
+    <section class="main-section" id="Paragraphs">
+        <header>Paragraphs
+        </header>
+   
+        <article>
+            <p>
+                As explained above, <span class="entities">&lt;p&gt;</span> elements are for containing paragraphs of text; you'll use these 
+                    frequently when marking up regular text content:
+           </p>
+<code>&lt;<span class="code-entity">p</span>&gt;This is a single paragraph&lt;<span class="code-entity">/p</span>&gt;
+</code>
+       <p>
+        Add your sample text (you should have it from What should your website look like?) into one or a
+         few paragraphs, placed directly below your <span class="entities">&lt;img&gt;</span> element.
+
+        
+       </p>  
+        
+        </article>
+   
+    </section>
+
+    <section class="main-section" id="Lists">
+        <header>Lists
+        </header>
+   
+        <article>
+            <p>
+                A lot of the web's content is lists and HTML has special elements for these.
+                 Marking up lists always consist of at least 2 elements. The most common list types 
+                 are ordered and unordered lists:
+           </p>
+    <ol>
+        <li>
+            <b>Unordered lists</b> are for lists where the order of the items doesn't matter, such as a shopping
+             list. These are wrapped in a <span class="entities">&lt;ul&gt;</span> element.
+        </li>
+        <li>
+            <b>Ordered lists</b> are for lists where the order of the items does matter, such as a recipe.
+            These are wrapped in a <span class="entities">&lt;ol&gt;</span> element.
+        </li>
+    </ol>
+    <p>
+        Each item inside the lists is put inside an <span class="entities">&lt;li&gt;</span> (list item) element.
+    </p>
+    <p>
+        For example, if we wanted to turn the part of the following paragraph fragment into a list
+    </p>
+
+    <code>&lt;<span class="code-entity">p</span>&gt;At Mozilla, we’re a global community of technologists, thinkers, and builders working together ... &lt;<span class="code-entity">/p</span>&gt;
+    </code>
+    <p>
+        We could modify the markup to this
+    </p>
+    <code>&lt;<span class="code-entity">p</span>&gt;At Mozilla, we’re a global community of&lt;<span class="code-entity">/p</span>&gt;
+   &lt;<span class="code-entity">ul</span>&gt;
+      &lt;<span class="code-entity">li</span>&gt;technologists&lt;<span class="code-entity">/li</span>&gt;
+      &lt;<span class="code-entity">li</span>&gt;thinkers&lt;<span class="code-entity">/li</span>&gt;
+      &lt;<span class="code-entity">li</span>&gt;builders&lt;<span class="code-entity">/li</span>&gt;
+    &lt;<span class="code-entity">/ul</span>&gt;
+&lt;<span class="code-entity">p</span>&gt;working together ...&lt;<span class="code-entity">/p</span>&gt;       
+    </code>
+    <p>
+        Try adding an ordered or unordered list to your example page.
+    </p>
+        
+        </article>
+   
+    </section>
+
+    <section class="main-section" id="Links">
+        <header>Links</header>
+   
+        <article>
+            <p>
+                Links are very important — they are what makes the web a web! To add a link, we need to use
+                 a simple element — <span class="entities">&lt;a&gt;</span> — "a" being the short form for "anchor". To make text within your
+                      paragraph into a link, follow these steps:
+           </p>
+
+           <ol>
+               <li>
+                Choose some text. We chose the text "Mozilla Manifesto".
+               </li>
+               <li>
+                Wrap the text in an <span class="entities">&lt;a&gt;</span> element, as shown below:
+               </li>
+           
+            <code> &lt;<span class="code-entity">a</span>&gt;Mozilla Manifesto&lt;<span class="code-entity">/a</span>&gt;
+</code>
+                   <li>
+                    Give the <span class="entities">&lt;a&gt;</span> element an href attribute, as shown below:
+         </li>
+         <code> &lt;<span class="code-entity">a</span> <span class="attributes">href</span>=""&gt;Mozilla Manifesto&lt;<span class="code-entity">/a</span>&gt;
+</code>
+<li>
+    Fill in the value of this attribute with the web address that you want the link to link to:
+</li>
+<code> &lt;<span class="code-entity">a</span> <span class="attributes">href</span>="<span class="entities">https://www.mozilla.org/en-US/about/manifesto/</span>"&gt;Mozilla Manifesto&lt;<span class="code-entity">/a</span>&gt;
+</code>
+        </ol>
+         <p>You might get unexpected results if you omit the https:// or http:// part, called the protocol, 
+             at the beginning of the web address. After making a link, click it to make sure it is sending 
+             you where you wanted it to.</p>
+             <p>
+                Add a link to your page now, if you haven't already done so.
+             </p>
+
+        </article>
+
+   
+    </section>
+
+    <section class="main-section" id="Conclusion">
+        <header>Conclusion</header>
+   
+        <article>
+            <p>
+                If you have followed all the instructions in this article, you should end up with a page
+                 that looks like the one below :
+           </p>
+           <img  id="imgconlusion" src="https://mdn.mozillademos.org/files/9351/finished-test-page-small.png" alt="Mozilla is cool">
+          
+           <p>
+            Here, we have only really scratched the surface of HTML. 
+            To find out more, go to our <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML">Learning HTML</a> topic.
+           </p>
+        </article>
+   
+    </section>
+
+    <section class="main-section" id="Reference">
+        <header>Reference</header>
+   
+        <article>
+          <ul>
+              <li>
+                All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics" target="_blank">MDN</a>
+              </li>
+          </ul>
+        </article>
+   
+    </section>
+   
+   </main>
+
+
+
+
+</body>
+</html>
